@@ -1,0 +1,47 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'othree/html5.vim'
+call plug#end()
+
+syntax on
+"colorscheme pencil
+highlight SpellBad term=reverse ctermbg=236
+
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+"set laststatus=2
+
+set backspace=indent,eol,start
+
+set ttyfast
+set expandtab           " enter spaces when tab is pressed
+"set textwidth=120       " break lines when line length increases
+set tabstop=4           " use 4 spaces to represent tab
+set softtabstop=4
+set shiftwidth=4        " number of spaces to use for auto indent
+set autoindent          " copy indent from current line when starting a new line
+
+"autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+"autocmd Filetype html setlocal ts=2 sw=2 expandtab
+":let g:html_indent_inctags = html,body,head,tbody,script"
+
+set pastetoggle=<F10>
+
+set ignorecase      " ignore case when searching
+
+"au FileType python setl sw=4 sts=4 et
+"au FileType html setl sw=2 sts=2 et
+
+"map v :!cowsay RIP visual_mode<CR>
+"map <C-v> :!cowsay RIP visual_block_mode<CR>
+"map <BS> :!cowsay RIP backspace<CR>
+
+"hi Visual ctermbg=17 gui=none
+
+"map q :qa<CR>
+"highlight Normal ctermfg=DarkGrey
+"highlight MyGroup cterm=bold
+"match MyGroup /./
+:inoremap <BS> <Nop>

@@ -1,0 +1,13 @@
+slock &&
+sort /root/.bash_history | uniq > /home/random/bash_history/$(date +%s) &
+xmodmap -e "keycode 9 = Caps_Lock" > /dev/null 2>&1 &
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' > /dev/null 2>&1 &
+xautolock -time 10 -locker slock &
+xset -b &
+compton &
+crond &
+echo 400 > /sys/class/backlight/intel_backlight/brightness &
+feh --bg-fill --no-fehbg /home/random/images/luffy.jpg &
+#redshift &
+exec dwm
+#exec startlxde

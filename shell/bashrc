@@ -1,0 +1,43 @@
+#PS1='\[\e[1;38m\]\h \[\e[38;5;172m\]${VIRTUAL_ENV##*/} \[\e[38;5;27m\]\W\[\e[0m\] \[\e[1;38m\]'
+PS1='\[\e[0;15m\]\h \[\e[0;34m\]${VIRTUAL_ENV##*/} \[\e[0;33m\]\W\[\e[0m\] \[\e[0;15m\]'
+
+set -o vi
+export TERM=xterm-256color
+#xmodmap -e "keycode 9 = Caps_Lock" > /dev/null 2>&1 & 
+#xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' > /dev/null 2>&1 &
+
+export EDITOR=vi
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+alias ls='ls --color'
+LS_COLORS=$LS_COLORS:'di=0;94' ; export LS_COLORS
+alias ll='ls -lash'
+alias chrome='gksu -u dinesh google-chrome-stable'
+#alias chrome='gksu -u dinesh /usr/bin/chromium'
+alias ffox='gksu -u dinesh firefox'
+alias vi='/usr/bin/nvim'
+alias mt='cd /home/mp/mt/mt && . ../mt_env/bin/activate'
+#alias wl='cd /home/mp/wl/wl && . ../wl_env/bin/activate'
+#alias rf='cd /home/mp/refactored/refactored && . ../r_env/bin/activate'
+#alias ab='cd /home/mp/artbunker/artbunker && . ../ab_env/bin/activate'
+alias exm='cd /home/mp/exm/exm && . ../exm_env/bin/activate'
+alias db='cd /home/mp/docker_box/docker_box && . ../db_env/bin/activate'
+
+alias smarthive='cd /home/mp/smarthive/smarthive && . ../sh_env/bin/activate'
+alias smarthive2='cd /home/mp/smarthive/smarthive && . ../sh_env2/bin/activate'
+
+alias ds='cd /home/mp/ds/ds && . ../ds_env/bin/activate'
+alias mtd='rm /usr/share/fonts/Ubuntu-C.ttf'
+alias mtu='cp /home/trash/Ubuntu-C.ttf /usr/share/fonts/'
+alias omt='mt && cd /opt/microtrack'
+alias wt='cd /home/mp/wmb_tk/wmb_tk && . ../wt_env/bin/activate'
+alias wmb='cd /home/mp/wmb/wmb && . ../wmb_env/bin/activate'
+alias tnt='cd /home/code/tnt && . tnt_env/bin/activate'
+alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
+alias ipython2='ipython2 --TerminalInteractiveShell.editing_mode=vi'
+alias poweroff='echo daily report'
+alias reboot='echo daily report'
+
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/root/anaconda3/bin:$PATH"
