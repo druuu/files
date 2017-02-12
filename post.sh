@@ -26,6 +26,7 @@ cp scripts/crontab /etc/ &&
 
 cp scripts/xmodmap /root/.config/ &&
 cp scripts/xmodmap1 /root/.config/ &&
+cp scripts/reset_xmodmap /root/.config/ &&
 cp scripts/ram.py /root/.config/ &&
 
 cd suckless/st && make clean install &&
