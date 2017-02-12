@@ -20,9 +20,13 @@ cp vi/vimrc /root/.vimrc &&
 cp vi/colors /root/.config/nvim/ -r &&
 cp vi/xmodmap_vi.sh /root/.config/ &&
 
-cp scripts/tnt ~/.config/tnt -r &&
+cp scripts/tnt /root/.config/tnt -r &&
 #TODO install scron from aur
 cp scripts/crontab /etc/ &&
+
+cp scripts/xmodmap /root/.config/ &&
+cp scripts/xmodmap1 /root/.config/ &&
+cp scripts/ram.py /root/.config/ &&
 
 cd suckless/st && make clean install &&
 cd ../dwm && make clean install &&
