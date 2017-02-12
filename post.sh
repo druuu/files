@@ -3,7 +3,7 @@
 timedatectl set-timezone Asia/Kolkata &&
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime &&
 
-pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip tk &&
+pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip tk xorg-xmodmap &&
 pacman -Rdd noto-fonts &&
 
 git clone 'https://github.com/druuu/files.git' &&
