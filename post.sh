@@ -3,7 +3,7 @@
 timedatectl set-timezone Asia/Kolkata &&
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime &&
 
-pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip &&
+pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip tk &&
 pacman -Rdd noto-fonts &&
 
 git clone 'https://github.com/druuu/files.git' &&
@@ -18,6 +18,11 @@ mkdir /root/.config/nvim &&
 cp vi/init.vim /root/.config/nvim/ &&
 cp vi/vimrc /root/.vimrc &&
 cp vi/colors /root/.config/nvim/ -r &&
+cp vi/xmodmap_vi.sh /root/.config/ &&
+
+cp scripts/tnt ~/.config/tnt -r &&
+#TODO install scron from aur
+cp scripts/crontab /etc/ &&
 
 cd suckless/st && make clean install &&
 cd ../dwm && make clean install &&
@@ -28,6 +33,7 @@ cp x/xinitrc /root/.xinitrc &&
 ls /root/.config || mkdir /root/.config
 cp x/compton.conf /root/.config/ &&
 
+#TODO better way to install packer
 yaourt_conf='[archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch' &&
