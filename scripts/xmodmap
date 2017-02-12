@@ -1,0 +1,5 @@
+#!/bin/bash
+xmodmap -e "keycode 24 = z"
+xmodmap -e "keycode 25 = x"
+xmodmap -e "keycode 26 = c"
+xmodmap -e "keycode 40 = space"
