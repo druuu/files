@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "druuu Mono:pixelsize=14:antialias=true:autohint=true";
+//static char font[] = "druuu Mono:pixelsize=14:antialias=true:autohint=true";
+static char font[] = "-*-druuu-*-*-semicondensed-*-14-*-*-*-*-*-*-*";
 static int borderpx = 0;
 static int histsize = 2000;
 
