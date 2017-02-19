@@ -18,3 +18,5 @@ pacstrap -i /mnt base &&
 genfstab -U -p /mnt >> /mnt/etc/fstab &&
 cat /mnt/etc/fstab &&
 arch-chroot /mnt /bin/bash
+
+#TODO run scripts after chroot
