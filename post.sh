@@ -1,13 +1,29 @@
 #!/bin/sh
 
+#datetime
 timedatectl set-timezone Asia/Kolkata &&
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime &&
 
-pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip tk xorg-xmodmap &&
+
+pacman -S base-devel openssh gksu xorg-server xf86-input-synaptics neovim xorg-xinit xf86-video-ati compton xautolock xdotool xbindkeys git firefox feh cron vim libxft xorg-xfd mpv alsa-utils redshift python-virtualenv python2-virtualenv ranger nload zip unzip tk xorg-xmodmap webkitgtk2 dmenu xorg-xprop &&
 pacman -Rdd noto-fonts &&
 
 git clone 'https://github.com/druuu/files.git' &&
 cd files && 
+
+#silent boot
+echo 'kernel.printk = 3 3 3 3' > /etc/sysctl.d/20-quiet-printk.conf &&
+echo '[[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null' > /root/.bash_profile &&
+cmp orig/mkinitcpio.conf /etc/mkinitcpio.conf &&
+cmp orig/systemd-fsck-root.service /usr/lib/systemd/system/systemd-fsck-root.service &&
+cmp 'orig/systemd-fsck@.service' '/usr/lib/systemd/system/systemd-fsck@.service' &&
+cp mod/mkinitcpio.conf /etc/ &&
+mkinitcpio -p linux &&
+cp mod/systemd-fsck-root.service /etc/systemd/system/ &&
+cp 'mod/systemd-fsck@.service' /etc/systemd/system/ &&
+
+
+#fonts
 rm /usr/share/fonts/* -r &&
 cp fonts/druuu.ttf /usr/share/fonts/ &&
 cp fonts/DaxRegular.ttf /home/dinesh/.fonts/ &&
@@ -29,6 +45,7 @@ cp scripts/xmodmap1 /root/.config/ &&
 cp scripts/reset_xmodmap /root/.config/ &&
 cp scripts/ram.py /root/.config/ &&
 
+cd suckless/surf-0.7 && make clean install &&
 cd suckless/st && make clean install &&
 cd ../dwm && make clean install &&
 cd ../slock-1.2 && make clean install &&

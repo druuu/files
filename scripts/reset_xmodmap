@@ -1,5 +1,7 @@
 #!/bin/bash
-xmodmap -e "keycode 52 = z"
-xmodmap -e "keycode 53 = x"
-xmodmap -e "keycode 54 = c"
-xmodmap -e "keycode 65 = space"
+xmodmap -e "keycode 24 = q"
+xmodmap -e "keycode 25 = w"
+xmodmap -e "keycode 26 = e"
+xmodmap -e "keycode 40 = d"
+xmodmap -e "keycode 116 = Down"
+xmodmap -e "keycode 111 = Up"
