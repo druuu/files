@@ -1,5 +1,5 @@
-syntax on
-colorscheme druuu
+"syntax on
+"colorscheme druuu
 
 filetype on
 filetype plugin on
@@ -29,3 +29,4 @@ hi clear texItalStyle
 "imap <k> <left>
 "imap <j> <left>
 "imap <j> <left>
+syntax off set nohlsearch set t_C
