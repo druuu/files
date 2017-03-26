@@ -1,0 +1,2 @@
+util linux, removed automatic login from getty.c, removed last login from login.c
+use: makepkg -eif

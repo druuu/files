@@ -1,0 +1,8 @@
+login-utils/su-su.o: login-utils/su.c /usr/include/stdc-predef.h config.h \
+ login-utils/su-common.h
+
+/usr/include/stdc-predef.h:
+
+config.h:
+
+login-utils/su-common.h:

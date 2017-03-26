@@ -1,0 +1,8 @@
+login-utils/runuser.o: login-utils/runuser.c /usr/include/stdc-predef.h \
+ config.h login-utils/su-common.h
+
+/usr/include/stdc-predef.h:
+
+config.h:
+
+login-utils/su-common.h:
