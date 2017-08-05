@@ -22,6 +22,7 @@ mkinitcpio -p linux &&
 cp mod/systemd-fsck-root.service /etc/systemd/system/ &&
 cp 'mod/systemd-fsck@.service' /etc/systemd/system/ &&
 cp -r 'mod/getty@tty1.service.d' /etc/systemd/system/ &&
+touch ~/.hushlogin
 
 
 #fonts
