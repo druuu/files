@@ -62,7 +62,7 @@ enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
 enum { SchemeNorm, SchemeSel, SchemeLast }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
-       NetWMWindowTypeDialog, NetWMWindowTypeNotification, NetClientList, NetLast }; /* EWMH atoms */
+       NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
 enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; /* default atoms */
 enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
        ClkClientWin, ClkRootWin, ClkLast }; /* clicks */
@@ -1035,7 +1035,6 @@ manage(Window w, XWindowAttributes *wa)
 	Client *c, *t = NULL;
 	Window trans = None;
 	XWindowChanges wc;
-	int set_focus3;
 
 	c = ecalloc(1, sizeof(Client));
 	c->win = w;
@@ -1088,11 +1087,7 @@ manage(Window w, XWindowAttributes *wa)
 	c->mon->sel = c;
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
-	set_focus3 = set_focus2(c);
-	if(set_focus3 == 2)
-	{
-		focus(NULL);
-	}
+	focus(NULL);
 }
 
 void
@@ -1579,7 +1574,6 @@ setup(void)
 	netatom[NetWMFullscreen] = XInternAtom(dpy, "_NET_WM_STATE_FULLSCREEN", False);
 	netatom[NetWMWindowType] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE", False);
 	netatom[NetWMWindowTypeDialog] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE_DIALOG", False);
-	netatom[NetWMWindowTypeNotification] = XInternAtom(dpy, "_NET_WM_WINDOW_TYPE_NOTIFICATION", False);
 	netatom[NetClientList] = XInternAtom(dpy, "_NET_CLIENT_LIST", False);
 	/* init cursors */
 	cursor[CurNormal] = drw_cur_create(drw, XC_left_ptr);
@@ -2011,25 +2005,8 @@ updatewindowtype(Client *c)
 
 	if (state == netatom[NetWMFullscreen])
 		setfullscreen(c, 1);
-	if (wtype == netatom[NetWMWindowTypeDialog] || wtype == netatom[NetWMWindowTypeNotification])
-	{
+	if (wtype == netatom[NetWMWindowTypeDialog])
 		c->isfloating = 1;
-	}
-}
-
-int
-set_focus2(Client *c)
-{
-    Atom wtype = getatomprop(c, netatom[NetWMWindowType]);
-    if (wtype == netatom[NetWMWindowTypeNotification])
-    {
-        return 1;
-    }
-    else
-    {
-        return 2;
-    }
-
 }
 
 void
