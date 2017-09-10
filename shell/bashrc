@@ -4,6 +4,7 @@ PS1='\[\e[0;37m\]\h \[\e[0;34m\]${VIRTUAL_ENV##*/} \[\e[0;33m\]\W\[\e[0m\] \[\e[
 
 set -o vi
 export TERM=xterm-256color
+export IGNOREEOF=42
 #xmodmap -e "keycode 9 = Caps_Lock" > /dev/null 2>&1 & 
 #xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' > /dev/null 2>&1 &
 
