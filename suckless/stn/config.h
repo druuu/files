@@ -7,7 +7,7 @@
  */
 //static char font[] = "druuu Mono:pixelsize=14:antialias=true:autohint=true";
 static char font[] = "-*-druuu-*-*-semicondensed-*-14-*-*-*-*-*-*-*";
-static int borderpx = 0;
+static int borderpx = 1;
 static int histsize = 2000;
 
 /*
@@ -26,8 +26,8 @@ static char stty_args[] = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 static char vtiden[] = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
-static float chscale = 1.1;
+static float cwscale = 0.86;
+static float chscale = 1.0;
 
 /*
  * word delimiter string
@@ -56,7 +56,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 0;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -103,6 +103,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+static unsigned int border_color = 15;
 static unsigned int defaultfg = 15;
 static unsigned int defaultbg = 233;
 static unsigned int defaultcs = 256;
@@ -121,8 +122,8 @@ static unsigned int cursorshape = 2;
  * Default colour and shape of the mouse cursor
  */
 static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 7;
-static unsigned int mousebg = 0;
+static unsigned int mousefg = 233;
+static unsigned int mousebg = 233;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this

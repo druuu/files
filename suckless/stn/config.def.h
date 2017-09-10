@@ -7,7 +7,7 @@
  */
 //static char font[] = "druuu Mono:pixelsize=14:antialias=true:autohint=true";
 static char font[] = "-*-druuu-*-*-semicondensed-*-14-*-*-*-*-*-*-*";
-static int borderpx = 0;
+static int borderpx = 1;
 static int histsize = 2000;
 
 /*
@@ -103,6 +103,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+static unsigned int border_color = 15;
 static unsigned int defaultfg = 15;
 static unsigned int defaultbg = 233;
 static unsigned int defaultcs = 256;
@@ -121,8 +122,8 @@ static unsigned int cursorshape = 2;
  * Default colour and shape of the mouse cursor
  */
 static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 7;
-static unsigned int mousebg = 0;
+static unsigned int mousefg = 233;
+static unsigned int mousebg = 233;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this

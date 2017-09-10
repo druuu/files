@@ -11,11 +11,11 @@ then
     then
         echo mem > /sys/power/state
     fi
-    if [ $capacity -le 40 ]
+    if [ $capacity -le 35 ]
     then
-        stn -i -g 20x1+1225 -e /root/.config/stn_bat.sh "bat discharging: $capacity" &
+        stn -i -g 25x1+1187 -e /root/.config/stn_bat.sh " bat discharging: $capacity%" &
     fi
-elif [ $capacity -ge 80 ]
+elif [ $capacity -ge 85 ]
 then
-    stn -i -g 20x1+1225 -e /root/.config/stn_bat.sh "bat charging: $capacity" &
+    stn -i -g 25x1+1187 -e /root/.config/stn_bat.sh " bat charging: $capacity%" &
 fi

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "$1"
+echo -n "$1"
 sleep 5
