@@ -258,7 +258,7 @@ typedef struct {
 	Colormap cmap;
 	Window win;
 	Drawable buf;
-	Atom xembed, wmdeletewin, netwmname, netwmpid;
+	Atom xembed, wmdeletewin, netwmname, netwmpid, netwmwtype, netwmwnotification, netwmwdialog, netwmwutility, netwmstate, netwmstateabove, data[2];
 	XIM xim;
 	XIC xic;
 	Draw draw;
@@ -3606,11 +3606,25 @@ xinit(void)
 	xw.xembed = XInternAtom(xw.dpy, "_XEMBED", False);
 	xw.wmdeletewin = XInternAtom(xw.dpy, "WM_DELETE_WINDOW", False);
 	xw.netwmname = XInternAtom(xw.dpy, "_NET_WM_NAME", False);
+    xw.netwmwtype = XInternAtom(xw.dpy, "_NET_WM_WINDOW_TYPE", False);
+    xw.netwmwnotification = XInternAtom(xw.dpy, "_NET_WM_WINDOW_TYPE_NOTIFICATION", False);
+	xw.netwmwdialog = XInternAtom(xw.dpy, "_NET_WM_WINDOW_TYPE_DIALOG", False);
+	xw.netwmwutility = XInternAtom(xw.dpy, "_NET_WM_WINDOW_TYPE_UTILITY", False);
+    xw.netwmstate = XInternAtom(xw.dpy, "_NET_WM_STATE", False);
+    xw.netwmstateabove = XInternAtom(xw.dpy, "_NET_WM_STATE_ABOVE", False);
 	XSetWMProtocols(xw.dpy, xw.win, &xw.wmdeletewin, 1);
 
 	xw.netwmpid = XInternAtom(xw.dpy, "_NET_WM_PID", False);
 	XChangeProperty(xw.dpy, xw.win, xw.netwmpid, XA_CARDINAL, 32,
 			PropModeReplace, (uchar *)&thispid, 1);
+
+    xw.data[0] = xw.netwmwnotification;
+    xw.data[1] = xw.netwmwutility;
+	XChangeProperty(xw.dpy, xw.win, xw.netwmwtype, XA_ATOM, 32,
+			PropModeReplace, (unsigned char *) xw.data, 2L);
+    xw.data[0] = xw.netwmstateabove;
+	XChangeProperty(xw.dpy, xw.win, xw.netwmstate, XA_ATOM, 32,
+			PropModeReplace, (unsigned char *) xw.data, 1L);
 
 	xresettitle();
 	XMapWindow(xw.dpy, xw.win);
