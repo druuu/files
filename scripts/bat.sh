@@ -13,9 +13,9 @@ then
     fi
     if [ $capacity -le 40 ]
     then
-        st -i -g 20x1+1225 -e ~/.config/stn.sh "bat discharging: $capacity" &
+        stn -i -g 20x1+1225 -e /root/.config/stn_bat.sh "bat discharging: $capacity" &
     fi
 elif [ $capacity -ge 80 ]
 then
-    st -i -g 20x1+1225 -e ~/.config/stn.sh "bat charging: $capacity" &
+    stn -i -g 20x1+1225 -e /root/.config/stn_bat.sh "bat charging: $capacity" &
 fi
