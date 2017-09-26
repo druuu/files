@@ -30,3 +30,7 @@ hi clear texItalStyle
 "imap <j> <left>
 "imap <j> <left>
 syntax off set nohlsearch set t_C
+highlight Search ctermbg=gray
+
+set foldenable
+set foldmethod=indent
