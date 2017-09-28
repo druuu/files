@@ -18,6 +18,9 @@ set ruler
 set mouse=
 set ttyfast
 set clipboard=unnamedplus
+set hidden
+set foldenable
+set foldmethod=indent
 
 au FileType python setl sw=4 sts=4 et
 :inoremap <BS> <Nop>
@@ -32,5 +35,3 @@ hi clear texItalStyle
 syntax off set nohlsearch set t_C
 highlight Search ctermbg=gray
 
-set foldenable
-set foldmethod=indent
