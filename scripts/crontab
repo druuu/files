@@ -1,4 +1,6 @@
-#!/bin/bash
-#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-#@reboot /root/.config/xmodmap_vi.sh
-* * * * * ~/.config/tnt/bat.sh
+#!/bin/sh
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+* * * * * root export DISPLAY=:0 && /bin/sh /root/.config/bat.sh
