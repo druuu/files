@@ -1,0 +1,21 @@
+slock &&
+
+#xrandr --output VIRTUAL1 --off --output DP3 --off --output DP2 --off --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output LVDS1 --mode 1600x900 --pos 0x0 --rotate normal --output VGA1 --primary --mode 1360x768 --pos 1600x0 --rotate left &
+#xrandr --output LVDS1 --brightness 0.9
+#xrandr --output VGA1 --brightness 0.8
+
+redshift -O 3700 -b 0.8 &
+xbindkeys &
+sort /root/.bash_history | uniq > /home/random/bash_history/$(date +%s) &
+xmodmap -e "keycode 9 = Caps_Lock" > /dev/null 2>&1 &
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' > /dev/null 2>&1 &
+xautolock -time 10 -locker slock &
+xset -b &
+
+#compton &
+crond &
+#feh --bg-fill --no-fehbg /home/random/images/luffy.jpg &
+
+echo 800 > /sys/class/backlight/intel_backlight/brightness &
+#xrandr --output LVDS1 --scale 0.8x0.8 &
+exec dwm
