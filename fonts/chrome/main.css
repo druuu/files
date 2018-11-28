@@ -1,0 +1,4 @@
+:not(i):not(.fa) {
+    font-family: DaxRegular !important;
+    font-style: normal !important;
+}
