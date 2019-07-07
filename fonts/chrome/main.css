@@ -1,4 +1,4 @@
-:not(i):not(.fa) {
+:not(i):not(.fa):not(md-icon) {
     font-family: DaxRegular !important;
     font-style: normal !important;
 }
