@@ -34,4 +34,4 @@ hi clear texItalStyle
 "imap <j> <left>
 syntax off set nohlsearch set t_C
 highlight Search ctermbg=gray
-
+highlight Visual cterm=NONE ctermbg=233 ctermfg=NONE
