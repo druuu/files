@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -f /usr/bin/vim ] && ln -s /usr/bin/vim /usr/bin/nvim
+
