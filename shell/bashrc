@@ -1,4 +1,4 @@
-PS1='\[\e[0;37m\]karrug \[\e[0;32m\]${VIRTUAL_ENV##*/} \[\e[0;33m\]\w\[\e[0m\] \[\e[0;37m\]'
+PS1='\[\e[0;37m\]karrug \[\e[0;37m\]${VIRTUAL_ENV##*/} \[\e[0;37m\]\w\[\e[0m\] \[\e[0;37m\]'
 
 set -o vi
 export TERM=xterm-256color
@@ -19,5 +19,4 @@ alias ipython2='ipython2 --TerminalInteractiveShell.editing_mode=vi'
 alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
 alias ssh2='ssh -o ServerAliveInterval=90 -o StrictHostKeyChecking=no $1'
 alias ck8s='cd /home/mp/colaberry/k8s/k8s'
-alias cl='cd /home/mp/colaberrylabs && . env/bin/activate'
 alias fire='firefox --private-window'
