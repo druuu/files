@@ -1,7 +1,4 @@
-#PS1='\[\e[1;38m\]\h \[\e[38;5;172m\]${VIRTUAL_ENV##*/} \[\e[38;5;27m\]\W\[\e[0m\] \[\e[1;38m\]'
-PS1='\[\e[0;37m\]\h \[\e[0;34m\]${VIRTUAL_ENV##*/} \[\e[0;33m\]\W\[\e[0m\] \[\e[0;37m\]'
-#PS1='\[\e[0;30m\]\h \[\e[0;34m\]${VIRTUAL_ENV##*/} \[\e[0;34m\]\W\[\e[0m\] \[\e[0;30m\]'
-#PS1='\[\e[0;15m\]\h \[\e[0;15m\]${VIRTUAL_ENV##*/} \[\e[0;15m\]\W\[\e[0m\] \[\e[0;15m\]'
+PS1='\[\e[0;37m\]karrug \[\e[0;32m\]${VIRTUAL_ENV##*/} \[\e[0;33m\]\w\[\e[0m\] \[\e[0;37m\]'
 
 set -o vi
 export TERM=xterm-256color
@@ -12,26 +9,15 @@ export IGNOREEOF=42
 export EDITOR=nvim
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-alias ls='ls --color'
-LS_COLORS=$LS_COLORS:'di=32:ex=31' ; export LS_COLORS
+alias ls='ls -F'
 alias ll='ls -lash'
-#alias chrome='gksu -u dinesh google-chrome-stable'
 alias chrome='google-chrome-stable --no-sandbox'
 
-#alias tnt='cd /home/code/tnt && . tnt_env/bin/activate'
 alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
 alias ipython2='ipython2 --TerminalInteractiveShell.editing_mode=vi'
 
 alias bat='cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status'
-# added by Anaconda3 4.2.0 installer
-#export PATH="/root/anaconda3/bin:$PATH"
-#export GOOGLE_API_KEY='AIzaSyBuRN8eKlM0TFIbOkW6uam5bQz6uYXnRfs'
-alias py35='cd /home/random/code/python35 && . ../python35_env/bin/activate'
-alias db='cd /home/mp/docker_box/docker_box && . ../db_env/bin/activate'
-alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
-alias ipython2='ipython2 --TerminalInteractiveShell.editing_mode=vi'
 alias ssh2='ssh -o ServerAliveInterval=90 -o StrictHostKeyChecking=no $1'
-alias aria2c2='aria2c -j10 -x10 -s10 $1'
-alias aria2c3='aria2c -j10 -x10 -s10 --seed-time=0 $1'
-alias ssh3='ssh -o ServerAliveInterval=90 -o StrictHostKeyChecking=no 34.217.144.66'
-alias skc='gcloud config configurations activate karrug && gcloud compute instances start karrug-com'
+alias ck8s='cd /home/mp/colaberry/k8s/k8s'
+alias cl='cd /home/mp/colaberrylabs && . env/bin/activate'
+alias fire='firefox --private-window'
